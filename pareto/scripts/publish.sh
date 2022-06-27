@@ -8,7 +8,7 @@ git push && \
 git diff --exit-code && \
 
 #make sure latest packages are installed
-$dir/updatePackage.sh ../pub && \
+$dir/updatePackage.sh ../$2 && \
 
 #validate that everything is committed
 git diff --exit-code && \
@@ -21,7 +21,7 @@ $dir/buildAndTest.sh && \
 #####$dir/analyseAllTypeScriptProjects.sh && \
 
 #bump version and store in variable
-pushd ../pub && \
+pushd ../$2 && \
 newVersion=$(npm version "$1") && \
 popd && \
 
@@ -34,6 +34,6 @@ git tag -a "$newVersion" -m "$newVersion" && \
 git push && \
 
 #publish
-pushd ../pub && \
+pushd ../$2 && \
 npm publish && \
 popd
