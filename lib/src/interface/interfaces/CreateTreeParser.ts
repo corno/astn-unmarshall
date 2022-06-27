@@ -1,4 +1,4 @@
-import { IContentParser } from "astn-parser-api";
+import { IContentTokenConsumer } from "astn-tokenconsumer-api";
 import { ITreeHandler } from "astn-handlers-api";
 
 // export type CreateTreeHandlerAndHandleErrorsParams<EventAnnotation> = {
@@ -11,8 +11,8 @@ import { ITreeHandler } from "astn-handlers-api";
 
 // export type CreateTreeParserAndHandleErrors<EventAnnotation> = (
 //     $p: CreateTreeHandlerAndHandleErrorsParams<EventAnnotation>
-// ) => IContentParser<EventAnnotation>
+// ) => IContentTokenConsumer<EventAnnotation>
 
 export type CreateTreeParser<EventAnnotation> = (
     handler: ITreeHandler<EventAnnotation> | null,
-) => IContentParser<EventAnnotation>
+) => IContentTokenConsumer<EventAnnotation>

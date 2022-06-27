@@ -3,9 +3,9 @@ import * as pr from "pareto-runtime"
 import * as api from "astn-unmarshall-api"
 import { SchemaSchemaBuilder } from "astn-typedtreehandler-api"
 
-import { IContentParser } from "astn-parser-api"
+import { IContentTokenConsumer } from "astn-tokenconsumer-api"
 
-import * as ap from "astn-parser-api"
+import * as ap from "astn-tokenconsumer-api"
 
 import { IStructureHandler } from "astn-handlers-api"
 import * as inf from "../interface"
@@ -42,7 +42,7 @@ export function createASTNUnmarshaller<EventAnnotation>(
     function createRealParser($: {
         specification: inf.InternalSchemaSpecification
         schemaAndSideEffects: typedTokenize.ISchemaAndSideEffects<EventAnnotation>
-    }): IContentParser<EventAnnotation> {
+    }): IContentTokenConsumer<EventAnnotation> {
         return createBodyTreeParser(
             createTreeUnmarshaller({
                 specification: $.specification,
@@ -56,15 +56,15 @@ export function createASTNUnmarshaller<EventAnnotation>(
 
     type QueueingParser = {
         annotation: EventAnnotation
-        setDownstream: (parser: IContentParser<EventAnnotation>) => void
-        parser: IContentParser<EventAnnotation>
+        setDownstream: (parser: IContentTokenConsumer<EventAnnotation>) => void
+        parser: IContentTokenConsumer<EventAnnotation>
     }
     function createQueueingParser(
         annotation: EventAnnotation
     ): QueueingParser {
         const queue: ap.AnnotatedToken<ap.ContentToken, EventAnnotation>[] = []
         let endAnnotation: null | EventAnnotation = null
-        let downStream: IContentParser<EventAnnotation> | null = null
+        let downStream: IContentTokenConsumer<EventAnnotation> | null = null
         return {
             annotation: annotation,
             setDownstream: (parser2) => {
@@ -169,7 +169,7 @@ export function createASTNUnmarshaller<EventAnnotation>(
         },
         onBody: () => {
             function createDummyParser(
-            ): IContentParser<EventAnnotation> {
+            ): IContentTokenConsumer<EventAnnotation> {
                 return createBodyTreeParser( //logs errors
                     null,
                 )
