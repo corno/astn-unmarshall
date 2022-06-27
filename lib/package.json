@@ -4,7 +4,7 @@
   "dependencies": {
     "astn-handlers-api": "^0.5.0",
     "astn-typedtreehandler-api": "^0.7.1",
-    "astn-unmarshall-api": "^0.5.0",
+    "astn-unmarshall-api": "^0.5.1",
     "pareto-runtime": "^0.22.0"
   },
   "files": [
