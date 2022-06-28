@@ -4,7 +4,7 @@
   "dependencies": {
     "astn-handlers-api": "^0.5.1",
     "astn-typedtreehandler-api": "^0.7.2",
-    "astn-unmarshall-api": "^0.5.2",
+    "astn-unmarshall-api": "^0.5.3",
     "pareto-runtime": "^0.22.0"
   },
   "files": [
@@ -26,5 +26,5 @@
   },
   "types": "dist/index.d.ts",
   "version": "0.4.1",
-  "content-fingerprint": "4465961084e92e9fbe1e48ded243bb2ba49da8e8"
+  "content-fingerprint": "d719a30ea5ce668d4d2a13ed4b83ac6d77257704"
 }
