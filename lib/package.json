@@ -3,8 +3,8 @@
   "bin": {},
   "dependencies": {
     "astn-handlers-api": "^0.5.1",
-    "astn-typedtreehandler-api": "^0.7.2",
-    "astn-unmarshall-api": "^0.5.3",
+    "astn-typedtreehandler-api": "^0.7.3",
+    "astn-unmarshall-api": "^0.5.4",
     "pareto-runtime": "^0.22.0"
   },
   "files": [
@@ -26,5 +26,5 @@
   },
   "types": "dist/index.d.ts",
   "version": "0.4.2",
-  "content-fingerprint": "d719a30ea5ce668d4d2a13ed4b83ac6d77257704"
+  "content-fingerprint": "239d28944b12c735025f9c97ab574bda9cc6e9da"
 }
