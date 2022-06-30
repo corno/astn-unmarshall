@@ -1,1 +1,2 @@
-console.log("Hello World!")
+import * as pl from "pareto-lang-lib"
+pl.logDebugMessage("no tests ye")

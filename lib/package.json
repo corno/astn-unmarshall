@@ -2,10 +2,11 @@
   "author": "Corno",
   "bin": {},
   "dependencies": {
-    "astn-handlers-api": "^0.5.1",
-    "astn-typedtreehandler-api": "^0.7.3",
+    "astn-handlers-api": "^0.6.0",
+    "astn-typedtreehandler-api": "^0.7.4",
     "astn-unmarshall-api": "^0.5.4",
-    "pareto-runtime": "^0.22.0"
+    "pareto-lang-lib": "^0.7.0",
+    "pareto-runtime": "^0.23.0"
   },
   "files": [
     "dist",
@@ -22,9 +23,9 @@
   "name": "astn-unmarshall-lib",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/corno/astn-unmarshall-lib.git"
+    "url": "git+https://github.com/corno/astn-unmarshall.git"
   },
   "types": "dist/index.d.ts",
   "version": "0.4.3",
-  "content-fingerprint": "239d28944b12c735025f9c97ab574bda9cc6e9da"
+  "content-fingerprint": "bc9d147da8df6404b9591e9a0564332fd530ec0b"
 }

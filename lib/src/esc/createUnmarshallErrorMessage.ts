@@ -1,7 +1,7 @@
 /* eslint
     "complexity": "off"
 */
-import * as pr from "pareto-runtime"
+import * as pl from "pareto-lang-lib"
 
 import { UnmarshallError } from "astn-unmarshall-api"
 
@@ -90,6 +90,6 @@ export function createUnmarshallErrorMessage(error: UnmarshallError): string {
             return "property has default value, remove"
         }
         default:
-            return pr.au(error[0])
+            return pl.au(error[0])
     }
 }

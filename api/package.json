@@ -2,8 +2,8 @@
   "author": "Corno",
   "bin": {},
   "dependencies": {
-    "astn-handlers-api": "^0.5.1",
-    "astn-typedtreehandler-api": "^0.7.3"
+    "astn-handlers-api": "^0.6.0",
+    "astn-typedtreehandler-api": "^0.7.4"
   },
   "files": [
     "dist",
@@ -20,9 +20,9 @@
   "name": "astn-unmarshall-api",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/corno/astn-unmarshall-api.git"
+    "url": "git+https://github.com/corno/astn-unmarshall.git"
   },
   "types": "dist/index.d.ts",
   "version": "0.5.4",
-  "content-fingerprint": "f283641057d9b58f7ea5e7f8a610d7bdf4bbef52"
+  "content-fingerprint": "67553386bea65de9b745b82e54f98f523f0b4ecd"
 }

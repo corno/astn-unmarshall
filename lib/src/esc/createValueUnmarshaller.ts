@@ -1,7 +1,7 @@
 /* eslint
     "@typescript-eslint/no-shadow": "off"
  */
-import * as pr from "pareto-runtime"
+import * as pl from "pareto-lang-lib"
 import { GroupDefinition, OptionDefinition, TaggedUnionDefinition, ValueDefinition } from "astn-typedtreehandler-api"
 import * as inf from "astn-unmarshall-api"
 import * as typed from "astn-typedtreehandler-api"
@@ -136,7 +136,7 @@ function createShorthandParsingState<EventAnnotation>(
                                 ["error", {}],
                             )
                             for (let x = $.index; x !== $.elements.length; x += 1) {
-                                const ee = pr.getElement($.elements, x)
+                                const ee = $.elements[x]
 
                                 defaultInitializeValue(
                                     ee.definition,
@@ -159,7 +159,7 @@ function createShorthandParsingState<EventAnnotation>(
                         })
                         break
                     default:
-                        pr.au(state.currentContext[0])
+                        pl.au(state.currentContext[0])
                 }
                 const previousContext = state.stack.pop()
                 if (previousContext !== undefined) {
@@ -183,7 +183,7 @@ function createShorthandParsingState<EventAnnotation>(
                 switch (stateImp.currentContext[0]) {
                     case "group":
                         const $ = stateImp.currentContext[1]
-                        const ee = pr.getElement($.elements, $.index)
+                        const ee = $.elements[$.index]
                         $.index++
                         if (ee !== undefined) {
                             return {
@@ -208,7 +208,7 @@ function createShorthandParsingState<EventAnnotation>(
                             }
                         }
                     default:
-                        return pr.au(stateImp.currentContext[0])
+                        return pl.au(stateImp.currentContext[0])
                 }
             }
             return findNextValueImp()
@@ -360,7 +360,7 @@ export function defaultInitializeValue<EventAnnotation>(
             break
         }
         default:
-            pr.au(definition.type[0])
+            pl.au(definition.type[0])
     }
 }
 
@@ -833,7 +833,7 @@ export function createValueUnmarshaller<EventAnnotation>(
                             break
                         }
                         default:
-                            pr.au($e.token.token.wrapping[0])
+                            pl.au($e.token.token.wrapping[0])
                     }
                 },
             }
@@ -873,7 +873,7 @@ export function createValueUnmarshaller<EventAnnotation>(
                     if ($e.token.token.lines.length > 1) {
                         flagNonDefaultPropertiesFound()
                     } else {
-                        if ($e.token.token.lines.length === 1 && pr.getElement($e.token.token.lines, 0) !== "") {
+                        if ($e.token.token.lines.length === 1 && $e.token.token.lines[0] !== "") {
                             flagNonDefaultPropertiesFound()
                         }
                     }
@@ -1119,6 +1119,6 @@ export function createValueUnmarshaller<EventAnnotation>(
             }
         }
         default:
-            return pr.au(definition.type[0])
+            return pl.au(definition.type[0])
     }
 }
