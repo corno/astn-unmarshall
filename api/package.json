@@ -23,6 +23,6 @@
     "url": "git+https://github.com/corno/astn-unmarshall.git"
   },
   "types": "dist/index.d.ts",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "content-fingerprint": "e2794c021cd538071d7b613091e1bdf2f8b358c3"
 }
