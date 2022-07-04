@@ -57,11 +57,11 @@ function createGroupContext<EventAnnotation>(
     subHandler: typed.IGroupHandler<EventAnnotation>,
 ): Context<EventAnnotation> {
     const expectedElements: ExpectedElements<EventAnnotation> = []
-    definition.properties.forEach((propDefinition, propKey) => {
+    definition.properties.toArray().forEach((propDefinition) => {
         expectedElements.push({
-            name: propKey,
+            name: propDefinition.key,
             handler: subHandler,
-            definition: propDefinition.value,
+            definition: propDefinition.value.value,
         })
     })
     return ["group", {
@@ -346,13 +346,13 @@ export function defaultInitializeValue<EventAnnotation>(
                 type: ["omitted", {}],
                 definition: $e,
             })
-            $e.properties.forEach((propDef, key) => {
+            $e.properties.toArray().forEach((propDef) => {
                 defaultInitializeValue(
-                    propDef.value,
+                    propDef.value.value,
                     groupHandler.onProperty({
-                        key: key,
+                        key: propDef.key,
                         token: null,
-                        definition: propDef.value,
+                        definition: propDef.value.value,
                     }),
                     onError,
                 )
@@ -1057,15 +1057,15 @@ export function createValueUnmarshaller<EventAnnotation>(
                             onEnd: ($$) => {
                                 let hadNonDefaultProperties = false
 
-                                $d.properties.forEach((propDefinition, propKey) => {
-                                    const pp = processedProperties[propKey]
+                                $d.properties.toArray().forEach((propDefinition) => {
+                                    const pp = processedProperties[propDefinition.key]
                                     if (pp === undefined) {
                                         defaultInitializeValue(
-                                            propDefinition.value,
+                                            propDefinition.value.value,
                                             groupHandler.onProperty({
-                                                key: propKey,
+                                                key: propDefinition.key,
                                                 token: null,
-                                                definition: propDefinition.value,
+                                                definition: propDefinition.value.value,
                                             }),
                                             onError,
                                         )
