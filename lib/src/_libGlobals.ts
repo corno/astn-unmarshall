@@ -38,12 +38,3 @@ interface String {
 interface Error {
 
 }
-//export const x = 5
-
-declare function isNaN(v: any): boolean
-
-interface ErrorConstructor {
-    new(message?: string): Error
-}
-
-declare let Error: ErrorConstructor;
