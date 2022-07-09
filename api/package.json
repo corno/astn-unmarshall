@@ -3,7 +3,7 @@
   "bin": {},
   "dependencies": {
     "astn-handlers-api": "^0.6.0",
-    "astn-typedtreehandler-api": "^0.8.0"
+    "astn-typedtreehandler-api": "^0.10.0"
   },
   "files": [
     "dist",
@@ -24,5 +24,5 @@
   },
   "types": "dist/index.d.ts",
   "version": "0.6.0",
-  "content-fingerprint": "e2794c021cd538071d7b613091e1bdf2f8b358c3"
+  "content-fingerprint": "918f25c7c848ab42d95aa312cc8afec1d6a7f9b3"
 }

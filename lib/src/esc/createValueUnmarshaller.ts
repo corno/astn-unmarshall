@@ -1,7 +1,7 @@
 /* eslint
     "@typescript-eslint/no-shadow": "off"
  */
-import * as pl from "pareto-lang-lib"
+import * as pl from "pareto-lib-core"
 import { GroupDefinition, OptionDefinition, TaggedUnionDefinition, ValueDefinition } from "astn-typedtreehandler-api"
 import * as inf from "astn-unmarshall-api"
 import * as typed from "astn-typedtreehandler-api"
